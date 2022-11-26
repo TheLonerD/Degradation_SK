@@ -83,8 +83,8 @@ namespace Degradation.Helpers
 
         public static void CalcRowsCols(float width, int size, int count, out int rows, out int cols)
         {
-            cols = (int)Math.Truncate((double)width / size);
-            rows = (int)Math.Ceiling((double)count / cols);
+            cols = (int) Math.Truncate((double) width / size);
+            rows = (int) Math.Ceiling((double) count / cols);
         }
     }
 }

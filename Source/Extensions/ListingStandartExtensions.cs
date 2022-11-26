@@ -29,7 +29,7 @@ namespace Degradation.Extensions
         {
             var width = instance.GetRect(0).width;
             var columnRectWidth = width / columns;
-            Utility.CalcRowsCols(columnRectWidth, (int)FinalIconSize, thingDefs.Max(t => t.Count), out var rows, out var cols);
+            Utility.CalcRowsCols(columnRectWidth, (int) FinalIconSize, thingDefs.Max(t => t.Count), out var rows, out var cols);
             var listingRect = instance.GetRect(rows * FinalIconSize);
 
             for (int colNum = 0; colNum < columns; colNum++)

@@ -140,7 +140,7 @@ namespace Degradation
             // Calc weapons listing virtual height
             Utility.CalcRowsCols(
                 width: listing.GetRect(0).width / 2,
-                size: (int)ListingStandartExtensions.FinalIconSize,
+                size: (int) ListingStandartExtensions.FinalIconSize,
                 count: Math.Max(excludedWeapons.Count, includedWeapons.Count),
                 out var rows,
                 out var _
