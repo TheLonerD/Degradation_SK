@@ -1,0 +1,10 @@
+<Project>
+  <PropertyGroup>
+    <Title>Degradation-SK</Title>
+    <Version>1.1.0</Version>
+    <Authors>LimeTreeSnake, Lightwave</Authors>
+    <AssemblyName>Degradation</AssemblyName>
+    <RootNamespace>Degradation</RootNamespace>
+    <BaseIntermediateOutputPath>obj\$(MSBuildProjectName)</BaseIntermediateOutputPath>
+  </PropertyGroup>
+</Project>
