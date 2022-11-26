@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Degradation.Extensions;
@@ -48,7 +48,7 @@ namespace Degradation.Alerts
                     .ToCommaList();
                 sb.AppendLine($"    {pawn} ({weapons})");
             }
-            return "DegradeWarningDesc".Translate(sb.ToString());
+            return "DegradeWarningDesc".Translate(sb.ToString().TrimEnd());
         }
 
         public override AlertReport GetReport()
