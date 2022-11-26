@@ -3,7 +3,7 @@
     <TargetFramework>net472</TargetFramework>
     <PlatformTarget>x64</PlatformTarget>
     <Title>Degradation-SK</Title>
-    <Version>1.2.0</Version>
+    <Version>1.1.0</Version>
     <Authors>LimeTreeSnake, Lightwave</Authors>
     <AssemblyName>Degradation</AssemblyName>
     <RootNamespace>Degradation</RootNamespace>

@@ -147,14 +147,18 @@ namespace Degradation
             );
 
             var weaponsListingHeight = rows * ListingStandartExtensions.FinalIconSize;
-            var weaponsListing = listing.BeginSection(weaponsListingHeight);
-            weaponsListing.WeaponList(2, (selectedWeapon) =>
-            {
-                if (!_excluded.Contains(selectedWeapon.defName))
-                    _excluded.Add(selectedWeapon.defName);
-                else
-                    _excluded.Remove(selectedWeapon.defName);
-            }, excludedWeapons, includedWeapons);
+            var weaponsListing = listing.BeginSection(weaponsListingHeight + 20f);
+            weaponsListing.WeaponList(2,
+                (selectedWeapon) =>
+                {
+                    if (!_excluded.Contains(selectedWeapon.defName))
+                        _excluded.Add(selectedWeapon.defName);
+                    else
+                        _excluded.Remove(selectedWeapon.defName);
+                },
+                new ListingStandartExtensions.WeaponColumn($"Excluded ({excludedWeapons.Count}):", excludedWeapons, ListingStandartExtensions.DrawPocketForbidden),
+                new ListingStandartExtensions.WeaponColumn($"Included ({includedWeapons.Count}):", includedWeapons, ListingStandartExtensions.DrawPocketAllowed)
+            );
 
             listing.EndSection(weaponsListing);
 
