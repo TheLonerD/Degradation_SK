@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<DefineConstants>RW13</DefineConstants>
-		<OutputPath>..\1.3\Assemblies\</OutputPath>
-	</PropertyGroup>
+  <PropertyGroup>
+    <DefineConstants>RW13</DefineConstants>
+    <OutputPath>..\1.3\Assemblies\</OutputPath>
+  </PropertyGroup>
 
   <ItemGroup>
     <Compile Remove="bin\**" />
