@@ -1,4 +1,4 @@
-﻿using Degradation.Helpers;
+using Degradation.Helpers;
 using HarmonyLib;
 using RimWorld;
 using Verse;
@@ -14,7 +14,8 @@ namespace Degradation.Harmony
         {
             if (__instance.EquipmentSource.DestroyedOrNull())
                 return;
-            if (!__instance.EquipmentSource.def.IsWeapon)
+            var def = __instance.EquipmentSource.def;
+            if (!def.IsMeleeWeapon)
                 return;
             Utility.DegradeCheck(__instance.EquipmentSource, __instance.CasterPawn);
         }

@@ -1,4 +1,4 @@
-﻿using Degradation.Helpers;
+using Degradation.Helpers;
 using HarmonyLib;
 using Verse;
 
@@ -13,7 +13,8 @@ namespace Degradation.Harmony
         {
             if (__instance.EquipmentSource.DestroyedOrNull())
                 return true;
-            if (!__instance.EquipmentSource.def.IsWeapon)
+            var def = __instance.EquipmentSource.def;
+            if (!def.IsRangedWeapon)
                 return true;
             return Utility.JamCheck(__instance.EquipmentSource, __instance.CasterPawn);
         }
@@ -23,7 +24,8 @@ namespace Degradation.Harmony
         {
             if (__instance.EquipmentSource.DestroyedOrNull())
                 return;
-            if (!__instance.EquipmentSource.def.IsWeapon)
+            var def = __instance.EquipmentSource.def;
+            if (!def.IsRangedWeapon)
                 return;
             Utility.DegradeCheck(__instance.EquipmentSource, __instance.CasterPawn);
         }
