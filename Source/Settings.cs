@@ -12,16 +12,16 @@ namespace Degradation
     {
         #region Fields
 
-        private static bool _showAlert = true;
-        private static int _awful = 20;
-        private static int _poor = 15;
-        private static int _normal = 10;
-        private static int _good = 8;
-        private static int _excellent = 6;
-        private static int _masterwork = 4;
-        private static int _legendary = 2;
-        private static int _alert = 25;
-        private static bool _jamming = true;
+        private static bool _showAlert;
+        private static int _awful;
+        private static int _poor;
+        private static int _normal;
+        private static int _good;
+        private static int _excellent;
+        private static int _masterwork;
+        private static int _legendary;
+        private static int _alert;
+        private static bool _jamming;
         private static HashSet<string> _excluded = new HashSet<string>();
         private string _filter = null;
 
@@ -49,15 +49,15 @@ namespace Degradation
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look(ref _awful, "Awful", _awful);
-            Scribe_Values.Look(ref _poor, "Poor", _poor);
-            Scribe_Values.Look(ref _normal, "Normal", _normal);
-            Scribe_Values.Look(ref _good, "Good", _good);
-            Scribe_Values.Look(ref _excellent, "Excellent", _excellent);
-            Scribe_Values.Look(ref _masterwork, "Masterwork", _masterwork);
-            Scribe_Values.Look(ref _legendary, "Legendary", _legendary);
-            Scribe_Values.Look(ref _jamming, "Jamming", _jamming);
-            Scribe_Values.Look(ref _alert, "Alert", _alert);
+            Scribe_Values.Look(ref _awful, "Awful", defaultValue: 20);
+            Scribe_Values.Look(ref _poor, "Poor", defaultValue: 15);
+            Scribe_Values.Look(ref _normal, "Normal", defaultValue: 10);
+            Scribe_Values.Look(ref _good, "Good", defaultValue: 8);
+            Scribe_Values.Look(ref _excellent, "Excellent", defaultValue: 6);
+            Scribe_Values.Look(ref _masterwork, "Masterwork", defaultValue: 4);
+            Scribe_Values.Look(ref _legendary, "Legendary", defaultValue: 2);
+            Scribe_Values.Look(ref _jamming, "Jamming", defaultValue: true);
+            Scribe_Values.Look(ref _alert, "Alert", defaultValue: 25);
             Scribe_Collections.Look(ref _excluded, "Excluded");
         }
 
