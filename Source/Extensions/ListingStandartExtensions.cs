@@ -22,7 +22,7 @@ namespace Degradation.Extensions
         public static readonly Texture2D DrawPocket = ContentFinder<Texture2D>.Get("drawPocket", true);
         public static readonly Texture2D DrawPocketAllowed = ContentFinder<Texture2D>.Get("drawPocketAllowed", true);
         public static readonly Texture2D DrawPocketForbidden = ContentFinder<Texture2D>.Get("drawPocketForbidden", true);
-        public static readonly Texture2D MissingDefIcon = ContentFinder<Texture2D>.Get("missingIcon", true);
+        public static readonly Texture2D MissingUiIcon = ContentFinder<Texture2D>.Get("missingIcon", true);
 
         public static void WeaponList(
           this Listing_Standard instance,
@@ -39,7 +39,7 @@ namespace Degradation.Extensions
             {
                 var column = weaponColumns[colNum];
                 var rect = new Rect(columnRectWidth * colNum, listingRect.y, columnRectWidth, listingRect.height);
-                
+
                 if (!column.Label.NullOrEmpty())
                 {
                     Widgets.Label(rect, column.Label);
@@ -47,7 +47,7 @@ namespace Degradation.Extensions
                     rect.height += 20f;
                 }
                 WeaponList(rect, column, cols, onChange);
-                
+
                 if (colNum != columns - 1)
                 {
                     var gap = columnRectWidth - ((cols * FinalIconSize) - IconGap - 2f);
@@ -83,7 +83,6 @@ namespace Degradation.Extensions
             var graphic = weapon.graphicData.Graphic;
             var color = weapon.graphicData.color;
             var colorTwo = weapon.graphicData.colorTwo;
-            var coloredVersion = weapon.graphicData.Graphic.GetColoredVersion(graphic.Shader, color, colorTwo);
             var iconRect = new Rect(contentRect.x + offset.x, contentRect.y + offset.y, IconSize, IconSize);
 
             // Handle tooltip and draw background
@@ -103,7 +102,7 @@ namespace Degradation.Extensions
 
             // Draw weapon icon
             GUI.color = color;
-            var weaponTexture = weapon.uiIcon ?? coloredVersion.MatSingle.mainTexture ?? MissingDefIcon;
+            var weaponTexture = weapon.uiIcon ?? MissingUiIcon;
             GUI.DrawTexture(iconRect, weaponTexture);
             GUI.color = Color.white;
             return Widgets.ButtonInvisible(iconRect);
